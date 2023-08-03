@@ -2,7 +2,7 @@ name: Octo Organization CI
 
 on:
   push:
-    branches: [ feature/ci_cd_build_deploy ]
+    branches: [main]
 
 jobs:
   build:
