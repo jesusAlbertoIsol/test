@@ -1,0 +1,13 @@
+name: Octo Organization CI
+
+on:
+  push:
+    branches: [ feature/ci_cd_build_deploy ]
+
+jobs:
+  build:
+    runs-on: [self-hosted, windowso , x64]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello from Organization runner!
