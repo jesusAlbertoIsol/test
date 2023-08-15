@@ -12,7 +12,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello from Organization runner!
       - name: Google Chat Notification
-        uses: Co-qn/google-chat-notification@releases/v1
+        uses: paulinthought/google-chat-release-notifier@v2.2
         with:
           name: Build
           url: https://chat.google.com/room/AAAAcezM7MI?cls=4
