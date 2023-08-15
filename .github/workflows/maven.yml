@@ -15,6 +15,6 @@ jobs:
         uses: Co-qn/google-chat-notification@releases/v1
         with:
           name: Build
-          url: https://chat.google.com/room/AAAAcezM7MI?cls=7
+          url: https://chat.google.com/room/AAAAcezM7MI?cls=4
           status: ${{ job.status }}
         if: always()
