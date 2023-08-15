@@ -16,5 +16,5 @@ jobs:
         with:
           name: Build
           url: https://chat.google.com/room/AAAAcezM7MI?cls=4
-          status: ${{ job.status }}
+          status: success
         if: always()
