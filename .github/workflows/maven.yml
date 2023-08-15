@@ -14,7 +14,7 @@ jobs:
       - name: Google Chat Notification
         uses: paulinthought/google-chat-release-notifier@v2.2
         with:
-          name: Build
+          name: Builds
           url: https://chat.google.com/room/AAAAcezM7MI?cls=1
           status: success
         if: always()
