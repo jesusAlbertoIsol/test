@@ -11,3 +11,11 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo Hello from Organization runner!
+      - name: Google Chat Notification
+        uses: paulinthought/google-chat-release-notifier@v2.2
+        with:
+          name: Build
+          url: https://chat.google.com/room/AAAAcezM7MI?cls=7
+          status: ${{ job.status }}
+          info: ": Branch: ${{ github.ref_name }}\nLoglevel: ${{inputs.logLevel}}"
+        if: always()
