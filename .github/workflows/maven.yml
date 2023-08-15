@@ -12,13 +12,6 @@ jobs:
       - name: Run a one-line script
         run: echo Hello from Organization runner
         
-      - name: Google Chat Notification Despliegue
-        uses: paulinthought/google-chat-release-notifier@v2.2
-        with:
-          name: Builds
-          url: https://chat.googleapis.com/v1/spaces/AAAAcezM7MI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=9SY2ZUxUoGkqrQi1prQ44LTYn0mFJ9vO2HUdwCMjTdo
-          info: ": Se realizara despliegue en el ambiente"
-          
       - name: Google Chat Notification
         uses: paulinthought/google-chat-release-notifier@v2.2
         with:
