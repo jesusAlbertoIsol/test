@@ -1,9 +1,21 @@
 name: dispach
 
 on:
-  push:
-    branches: [main]
-
+  workflow_dispatch:
+   inputs:
+      deployment_evn:
+        description: 'Configuracion de ambiente'
+        required: true
+        default: 'qa4'
+        type: choice
+        options:
+        - qa1
+        - qa2
+        - qa3
+        - qa4
+        - dev
+        
+permissions: write-all
 jobs:
   build:
     runs-on: ubuntu-latest
