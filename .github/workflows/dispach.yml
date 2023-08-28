@@ -3,7 +3,9 @@ name: dispach
 on:
   workflow_dispatch:
    inputs:
-      deployment_evn:
+     branches:
+       - main
+        deployment_evn:
         description: 'Configuracion de ambiente'
         required: true
         default: 'qa4'
