@@ -12,11 +12,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo Hello from Organization runner
-      - name: se detiene
-        
-        env:
-         $BOOLEAN: false
-        run: $BOOLEAN
+      - name: Create annotation for build error
+        run: echo "::error file=app.js,line=1::Missing semicolon"
         
       - name: Google Chat Notification
         uses: paulinthought/google-chat-release-notifier@v2.2
