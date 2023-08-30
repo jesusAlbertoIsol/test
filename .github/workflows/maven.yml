@@ -13,8 +13,15 @@ jobs:
       - name: Run a one-line script
         run: echo Hello from Organization runner
 
-      - uses: actions/checkout@v1
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+      - name: variable Rama
+        run: echo ${{ steps.extract_branch.outputs.branch }}
+        
       - name: Try to fail
+        if: contains(${{ steps.extract_branch.outputs.branch }} ,'feature/ci_cd_build_deploy')
         run: exit 1
       - name: Print message if we don't fail
         run: echo Should not get here
