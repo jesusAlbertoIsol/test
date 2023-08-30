@@ -21,7 +21,7 @@ jobs:
         run: echo ${{ steps.extract_branch.outputs.branch }}
         
       - name: Try to fail
-        if: contains(${{ steps.extract_branch.outputs.branch }} ,'main')
+        if: ${{ ${{ steps.extract_branch.outputs.branch }} != 'main' }}
         run: exit 1
       - name: Print message if we don't fail
         run: echo Should not get here
