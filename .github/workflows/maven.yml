@@ -22,9 +22,10 @@ jobs:
         
       - name: Try to fail
         if:  ${{ steps.extract_branch.outputs.branch != 'main' }}
-        run: exit 1
+        run: exit 1 | echo "error=rama no valida " >>  $GITHUB_OUTPUT
+        id: messageError
       - name: Print message if we don't fail
-        run: echo Should not get here
+        run: echo ${{ steps.messageError.outputs.error }}
         
       - name: Google Chat Notification
         uses: paulinthought/google-chat-release-notifier@v2.2
