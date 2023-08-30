@@ -12,8 +12,12 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo Hello from Organization runner
-      - name: Create annotation for build error
-        run: echo "::error file=app.js,line=1::Missing semicolon"
+
+      - uses: actions/checkout@v1
+      - name: Try to fail
+        run: exit 1
+      - name: Print message if we don't fail
+        run: echo Should not get here
         
       - name: Google Chat Notification
         uses: paulinthought/google-chat-release-notifier@v2.2
