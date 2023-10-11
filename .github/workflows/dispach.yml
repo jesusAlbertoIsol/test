@@ -1,5 +1,4 @@
 name: dispach
-
 on:
   workflow_dispatch:
    inputs:
