@@ -32,8 +32,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: ${{ inputs.ambiente }}
-      - name: Run a one-line script
+        run: ${{ inputs.ambiente }}  ${{ inputs.servidor }}
+      - name: Run a one
         run: ${{ inputs.servidor }}
         
       #- name: Google Chat Notification
