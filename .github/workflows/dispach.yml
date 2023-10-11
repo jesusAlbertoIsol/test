@@ -2,19 +2,15 @@ name: dispach
 on:
   workflow_dispatch:
    inputs:
-      deployment_evn:
-        description: 'Configuracion de ambiente'
+      logLevel:
+        description: 'Log level'     
         required: true
-        default: 'qa4'
-        type: choice
-        options:
-        - qa1
-        - qa2
-        - qa3
-        - qa4
-        - dev
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
         
 permissions: write-all
+
 jobs:
   build:
     runs-on: ubuntu-latest
