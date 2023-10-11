@@ -2,8 +2,6 @@ name: dispach
 on:
   workflow_dispatch:
    inputs:
-     branches:
-       - main
         deployment_evn:
         description: 'Configuracion de ambiente'
         required: true
