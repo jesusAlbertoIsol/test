@@ -12,9 +12,16 @@ on:
         - qa2
         - qa3
         - qa4
-        - dev
-
-
+        - dev 
+      servidor:     
+        description: 'Configuracion de ambiente'
+        required: true
+        default: 'qa4'
+        type: choice
+        options:
+        - q01
+        - q02
+       
         
 permissions: write-all
 
@@ -25,7 +32,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: ${{ inputs.ambiente }} 
+        run:  echo ${{ inputs.ambiente }} 
+      - name: Run a one
+        run:  echo ${{ inputs.servidor }} 
         
       #- name: Google Chat Notification
        # uses: paulinthought/google-chat-release-notifier@v2.2
