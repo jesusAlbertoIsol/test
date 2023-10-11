@@ -13,14 +13,7 @@ on:
         - qa3
         - qa4
         - dev
-      servidor:
-        description: 'Configuracion de ambiente'
-        required: true
-        default: 'tr'
-        type: choice
-        options:
-        - ser01
-        - ser02
+
 
         
 permissions: write-all
@@ -33,8 +26,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: ${{ inputs.ambiente }} 
-      - name: Run a one
-        run: ${{ inputs.ambiente.servidor }}
         
       #- name: Google Chat Notification
        # uses: paulinthought/google-chat-release-notifier@v2.2
