@@ -17,7 +17,7 @@ on:
         description: 'Configuracion de ambiente'
         required: true
         default: 'tr'
-        type: choicej
+        type: choice
         options:
         - ser01
         - ser02
@@ -34,7 +34,7 @@ jobs:
       - name: Run a one-line script
         run: ${{ inputs.ambiente }} 
       - name: Run a one
-        run: ${{ inputs.servidor }}
+        run: ${{ inputs.ambiente.servidor }}
         
       #- name: Google Chat Notification
        # uses: paulinthought/google-chat-release-notifier@v2.2
