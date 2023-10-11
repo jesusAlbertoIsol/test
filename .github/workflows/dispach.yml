@@ -17,7 +17,7 @@ on:
         description: 'Configuracion de ambiente'
         required: true
         default: 'tr'
-        type: choice
+        type: choicej
         options:
         - ser01
         - ser02
