@@ -2,12 +2,26 @@ name: dispach
 on:
   workflow_dispatch:
    inputs:
-      logLevel:
-        description: 'Log level'     
+      ambiente:     
+        description: 'Configuracion de ambiente'
         required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'  
+        default: 'qa4'
+        type: choice
+        options:
+        - qa1
+        - qa2
+        - qa3
+        - qa4
+        - dev
+      servidor:
+        description: 'Configuracion de ambiente'
+        required: true
+        default: 'qa4'
+        type: choice
+        options:
+        - ser01
+        - ser02
+
         
 permissions: write-all
 
@@ -18,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: echo Hello from Organization runner
+        run: ${{ inputs.deployment_evn }}
         
       - name: Google Chat Notification
         uses: paulinthought/google-chat-release-notifier@v2.2
