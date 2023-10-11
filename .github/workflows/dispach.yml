@@ -16,7 +16,7 @@ on:
       servidor:
         description: 'Configuracion de ambiente'
         required: true
-        default: 'qa4'
+        default: 'tr'
         type: choice
         options:
         - ser01
@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run: ${{ inputs.ambiente }}  ${{ inputs.servidor }}
+        run: ${{ inputs.ambiente }} 
       - name: Run a one
         run: ${{ inputs.servidor }}
         
