@@ -14,7 +14,7 @@ on:
         - qa4
         - dev 
       servidor:     
-        description: 'Configuracion de ambiente'
+        description: 'Configuracion de servidor'
         required: true
         default: 'qa4'
         type: choice
