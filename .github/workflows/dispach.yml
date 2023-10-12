@@ -19,8 +19,8 @@ on:
         default: 'qa4'
         type: choice
         options:
-        - q01
-        - q02
+        - '01'
+        - 'q02'
        
         
 permissions: write-all
