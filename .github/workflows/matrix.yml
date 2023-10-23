@@ -9,13 +9,10 @@ jobs:
     strategy:
       matrix:
         version: [10, 12, 14]
-        os: [ubuntu-latest, windows-latest] 
-    runs-on:  [ubuntu-latest]
+    
+    runs-on: [self-hosted, linux, pos]
 
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.version }}
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo ${{ matrix.version }}
