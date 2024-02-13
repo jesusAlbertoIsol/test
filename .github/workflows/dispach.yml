@@ -1,9 +1,12 @@
 name: dispach
 on:
   workflow_dispatch:
-    branches:
-      - main
-  
+
+  push:
+    branches:    
+      - 'release/**'
+      - 'feature/**'
+      - 'main'
         
 permissions: write-all
 
