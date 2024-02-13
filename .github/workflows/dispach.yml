@@ -1,22 +1,9 @@
 name: dispach
 on:
   workflow_dispatch:
-   inputs:
-      ambiente:     
-        description: 'Configuracion de ambiente'
-        required: true
-        default: 'qa4'
-     
-      
-      servidor:     
-        description: 'Configuracion de servidor'
-        required: true
-        default: 'qa4'
-        type: choice
-        options:
-        - '01'
-        - 'q02'
-       
+    branches:
+      - main
+
         
 permissions: write-all
 
