@@ -6,13 +6,8 @@ on:
         description: 'Configuracion de ambiente'
         required: true
         default: 'qa4'
-        type: choice
-        options:
-        - qa1
-        - qa2
-        - qa3
-        - qa4
-        - dev 
+     
+      
       servidor:     
         description: 'Configuracion de servidor'
         required: true
