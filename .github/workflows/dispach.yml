@@ -1,9 +1,8 @@
 name: dispach
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch to checkout'
+    branches:
+      - main
   
         
 permissions: write-all
