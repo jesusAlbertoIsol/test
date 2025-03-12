@@ -1,41 +1,36 @@
 name: dispach
 on:
   workflow_dispatch:
-
-  push:
-    branches:    
-      - 'release/**'
-      - 'feature/**'
-      - 'main'
+   inputs:
+     branches:
+       - main
+        deployment_evn:
+        description: 'Configuracion de ambiente'
+        required: true
+        default: 'qa4'
+        type: choice
+        options:
+        - qa1
+        - qa2
+        - qa3
+        - qa4
+        - dev
         
 permissions: write-all
-
 jobs:
   build:
     runs-on: ubuntu-latest
     environment: prueba
     steps:
-      - name: Set up JDK 8
-        uses: actions/setup-java@v3
-        with:
-          java-version: '8'
-          distribution: 'temurin'
-      - name: Set up Maven
-        uses: stCarolas/setup-maven@v4.5
-        with:
-          maven-version: 3.8.1
-          
       - uses: actions/checkout@v3
       - name: Run a one-line script
-        run:  echo ${{ inputs.ambiente }} 
-      - name: Run a one
-        run:  echo ${{ inputs.servidor }} 
+        run: echo Hello from Organization runner
         
-      #- name: Google Chat Notification
-       # uses: paulinthought/google-chat-release-notifier@v2.2
-        #with:
-         # name: Builds
-          #url: https://chat.googleapis.com/v1/spaces/AAAAcezM7MI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=9SY2ZUxUoGkqrQi1prQ44LTYn0mFJ9vO2HUdwCMjTdo
-          #status: ${{ job.status }}
-          #info: ": Branch: ${{ github.ref_name }}"
+      - name: Google Chat Notification
+        uses: paulinthought/google-chat-release-notifier@v2.2
+        with:
+          name: Builds
+          url: https://chat.googleapis.com/v1/spaces/AAAAcezM7MI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=9SY2ZUxUoGkqrQi1prQ44LTYn0mFJ9vO2HUdwCMjTdo
+          status: ${{ job.status }}
+          info: ": Branch: ${{ github.ref_name }}"
       
